@@ -1,0 +1,135 @@
+		<h3 style="color: #000080; margin-bottom: 0px;">CADASTRO</h3>
+<p><span style="color: #000080;">Olá! Preencha o cadastro abaixo para antecipar seu check-in.</span></p>
+	</div>
+</div>
+
+<div class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding instance-5" data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
+		<div class="vc_column-inner">
+			<div class="wpb_wrapper">
+				
+</div></div>
+<html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .texto-azul {
+            font-size: 12px;
+            color: navy;
+        }
+    </style>
+</head>
+</body>
+</html>
+             
+<p>
+<div>             
+<h3>Dados Pessoais</h3>
+  
+  <label for="field_trxvf" id="field_trxvf_label" class="frm_primary_label">- Nome Completo
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="nome" name="nome" value="" maxlength="60" data-reqmsg="Este campo não pode estar vazio." aria-required="true" data-invmsg="Permitido apenas letras." aria-invalid="false" pattern="([a-zA-ZçÇ\s]+)$">
+    <id="frm_field_11_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_half">
+    <label for="field_i3azc" id="field_i3azc_label" class="frm_primary_label">- Gênero
+        <span class="frm_required">*</span>
+    </label>
+    		<select name="genero" id="genero" data-reqmsg="Este campo não pode estar vazio." aria-required="true" data-invmsg="Gênero is invalid" aria-invalid="false">
+				<option value="" selected="selected">
+			 		</option>
+				<option value="Masculino">
+			Masculino		</option>
+				<option value="Feminino">
+			Feminino		</option>
+				<option value="Não Opinar">
+			Outro		</option>
+			</select>
+	
+    
+    
+</div>
+<p><div id="frm_field_12_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_first frm_half">
+    <label for="field_mb929" id="field_mb929_label" class="frm_primary_label">- CPF
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="CPF" name="CPF" value="" data-frmmask="999.999.999-99" data-reqmsg="Este campo não pode estar vazio." aria-required="true" data-invmsg="Text is invalid" aria-invalid="false" pattern="\d\d\d\.\d\d\d\.\d\d\d-\d\d$">
+        <label for="field_mb929" id="field_mb929_label" class="frm_primary_label">- Identidade
+        <span class="frm_required">*</span>
+</label>
+ <input type="text" id="identidade" name="identidade" value="" maxlength="15"    
+</div>
+<p><div id="frm_field_13_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_half">
+    <label for="field_e2xcl" id="field_e2xcl_label" class="frm_primary_label">- Data de Nascimento
+        <span class="frm_required">*</span>
+    </label>
+    <input type="date" id="field_e2xcl" name="item_meta[13]" value="" maxlength="10" data-reqmsg="Este campo não pode estar vazio." aria-required="true" data-invmsg="Você precisa ter pelo menos 18 (dezoito) anos!" class="frm_date" aria-invalid="false">
+    
+    
+</div>
+<p><div id="frm_field_14_container" class="frm_form_field form-field  frm_top_container frm_first frm_half">
+    <label for="field_6wc4z" id="field_6wc4z_label" class="frm_primary_label">- Celular / Whatsapp
+        <span class="frm_required">*</span>
+    </label>
+    <input type="text" id="field_6wc4z" name="item_meta[14]" value="" data-frmmask="(99)99999-9999" data-invmsg="Text is invalid" aria-invalid="false" pattern="\(\d\d\)\d\d\d\d\d-\d\d\d\d$">
+    
+    
+</div>
+<p><div id="frm_field_7_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_first frm_half">
+    <label for="field_rnago" id="field_rnago_label" class="frm_primary_label">- E-mail
+        <span class="frm_required">*</span>
+    <input type="email" id="email" name="email" value="" data-reqmsg="Campo obrigatório" aria-required="true" data-invmsg="Email inválido" aria-invalid="false">
+  
+      <head>
+    <title>Endereço</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+        $(document).ready(function() {
+            $('#cep').blur(function() {
+                var cep = $(this).val().replace(/\D/g, '');
+                
+                if (cep !== "") {
+                    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+                    $.getJSON(url, function(data) {
+                        if (!("erro" in data)) {
+                            $('#endereco').val(data.logradouro);
+                            $('#bairro').val(data.bairro);
+                            $('#cidade').val(data.localidade);
+                            $('#estado').val(data.uf);
+                        } else {
+                            alert("CEP não encontrado.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h3>Endereço</h3>
+
+<p><label for="cep">- CEP (somente números) *</label>
+<input type="text" id="cep" name="cep" required><br>
+
+<p><label for="endereco">- Endereço:*</label>
+<input type="text" id="endereco" name="endereco" required><br>
+
+<p><label for="numero">- Número: *</label>
+<input type="number" id="numero" name="numero" size="5" required><br>
+
+<p><label for="complemento">- Complemento:</label>
+<input type="text" id="complemento" name="complemento" br><br>
+
+<p><label for="bairro">- Bairro: *</label>
+<input type="text" id="bairro" name="bairro" required><br>
+
+<p><label for="cidade">- Cidade: *</label>
+<input type="text" id="cidade" name="cidade" required><br>
+
+<p><label for="estado">- Estado: *</label>
+<input type="text" id="estado" name="estado" required><br><br>
